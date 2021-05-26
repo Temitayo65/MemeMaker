@@ -17,8 +17,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var shareButton: UIButton!
 
     // setting delegates for the textfields and attributes for them also
-    let topTextFieldDelegate = TextFieldDelegate()
-    let bottomTextFieldDelegate = TextFieldDelegate()
+    let styledTextFieldDelegate = TextFieldDelegate()
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.black,
@@ -28,16 +27,8 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.delegate = topTextFieldDelegate
-        bottomTextField.delegate = bottomTextFieldDelegate
-        topTextField.text = "TOP"
-        topTextField.textAlignment = .center
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
-        topTextField.backgroundColor = UIColor(white: 1, alpha: 0.2)
-        bottomTextField.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        setupTextFieldStyle(toTextField: topTextField, defaultText: "TOP")
+        setupTextFieldStyle(toTextField: bottomTextField, defaultText: "BOTTOM")
         shareButton.isEnabled = false
     }
     
@@ -51,6 +42,15 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications() // This is called inside the ViewWillDisappear
+    }
+    
+    // sets up textFieldStyle
+    func setupTextFieldStyle(toTextField textField: UITextField, defaultText: String) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = styledTextFieldDelegate
+        textField.text = defaultText
+        textField.textAlignment = .center
+        textField.backgroundColor = UIColor(white: 1, alpha: 0.2)
     }
     
     func subscribeToKeyboardNotifications() {
@@ -71,9 +71,7 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        if bottomTextField.isEditing {
             view.frame.origin.y = 0
-        }
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
