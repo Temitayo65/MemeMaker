@@ -1,15 +1,15 @@
 //
-//  BottomTextFieldDelegate.swift
+//  TopTextFieldDelegate.swift
 //  MeMe 1.0
 //
-//  Created by owner on 25/05/2021.
+//  Created by owner on 24/05/2021.
 //
 
 import Foundation
 import UIKit
 
 
-class BottomTextFieldDelegate: NSObject, UITextFieldDelegate{
+class TextFieldDelegate: NSObject, UITextFieldDelegate{    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
@@ -19,6 +19,5 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
-    
     
 }

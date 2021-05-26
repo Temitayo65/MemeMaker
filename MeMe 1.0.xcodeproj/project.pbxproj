@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		EBD340B82659415700F70E5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD340B72659415700F70E5D /* AppDelegate.swift */; };
 		EBD340BA2659415700F70E5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD340B92659415700F70E5D /* SceneDelegate.swift */; };
-		EBD340BC2659415700F70E5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD340BB2659415700F70E5D /* ViewController.swift */; };
+		EBD340BC2659415700F70E5D /* CreateMemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD340BB2659415700F70E5D /* CreateMemeVC.swift */; };
 		EBD340BF2659415700F70E5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD340BD2659415700F70E5D /* Main.storyboard */; };
 		EBD340C12659415E00F70E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD340C02659415E00F70E5D /* Assets.xcassets */; };
 		EBD340C42659415E00F70E5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD340C22659415E00F70E5D /* LaunchScreen.storyboard */; };
-		EBD63D44265C065D0023C821 /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D43265C065D0023C821 /* TopTextFieldDelegate.swift */; };
-		EBD63D48265D16B30023C821 /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D47265D16B30023C821 /* BottomTextFieldDelegate.swift */; };
+		EBD63D44265C065D0023C821 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D43265C065D0023C821 /* TextFieldDelegate.swift */; };
 		EBD63D51265D527E0023C821 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D50265D527E0023C821 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +21,12 @@
 		EBD340B42659415700F70E5D /* MeMe 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeMe 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD340B72659415700F70E5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD340B92659415700F70E5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBD340BB2659415700F70E5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBD340BB2659415700F70E5D /* CreateMemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemeVC.swift; sourceTree = "<group>"; };
 		EBD340BE2659415700F70E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBD340C02659415E00F70E5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBD340C32659415E00F70E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD340C52659415E00F70E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBD63D43265C065D0023C821 /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
-		EBD63D47265D16B30023C821 /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		EBD63D43265C065D0023C821 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		EBD63D50265D527E0023C821 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,10 +62,9 @@
 			children = (
 				EBD340B72659415700F70E5D /* AppDelegate.swift */,
 				EBD340B92659415700F70E5D /* SceneDelegate.swift */,
-				EBD340BB2659415700F70E5D /* ViewController.swift */,
+				EBD340BB2659415700F70E5D /* CreateMemeVC.swift */,
 				EBD63D50265D527E0023C821 /* Model.swift */,
-				EBD63D43265C065D0023C821 /* TopTextFieldDelegate.swift */,
-				EBD63D47265D16B30023C821 /* BottomTextFieldDelegate.swift */,
+				EBD63D43265C065D0023C821 /* TextFieldDelegate.swift */,
 				EBD340BD2659415700F70E5D /* Main.storyboard */,
 				EBD340C02659415E00F70E5D /* Assets.xcassets */,
 				EBD340C22659415E00F70E5D /* LaunchScreen.storyboard */,
@@ -146,12 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD63D44265C065D0023C821 /* TopTextFieldDelegate.swift in Sources */,
-				EBD340BC2659415700F70E5D /* ViewController.swift in Sources */,
+				EBD63D44265C065D0023C821 /* TextFieldDelegate.swift in Sources */,
+				EBD340BC2659415700F70E5D /* CreateMemeVC.swift in Sources */,
 				EBD340B82659415700F70E5D /* AppDelegate.swift in Sources */,
 				EBD63D51265D527E0023C821 /* Model.swift in Sources */,
 				EBD340BA2659415700F70E5D /* SceneDelegate.swift in Sources */,
-				EBD63D48265D16B30023C821 /* BottomTextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
