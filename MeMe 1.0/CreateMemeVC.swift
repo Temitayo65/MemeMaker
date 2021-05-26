@@ -83,21 +83,20 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        shareButton.isEnabled = true
-        self.present(imagePicker, animated: true, completion: nil)
+        openImagePicker(.photoLibrary)
     }
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
-        
+        openImagePicker(.camera)
     }
 
+    func openImagePicker(_ type: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = type
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func shareButton(_ sender: Any){
         let memedImage = generateMemedImage()
         let shareActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
