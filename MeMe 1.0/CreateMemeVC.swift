@@ -14,8 +14,8 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var pickFromCamera: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
-
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     // setting delegates for the textfields and attributes for them also
     let styledTextFieldDelegate = TextFieldDelegate()
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -114,12 +114,13 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             selectedImageView.image = image
-            selectedImageView.contentMode = .scaleToFill
         }
+        shareButton.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
       dismiss(animated: true, completion: nil)
     }
     
