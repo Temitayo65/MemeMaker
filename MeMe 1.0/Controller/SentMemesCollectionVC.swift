@@ -64,6 +64,14 @@ class SentMemesCollectionVC: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sentMemesCollectionCell = self.memes[(indexPath as NSIndexPath).row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let sentMemesDetailController = storyboard.instantiateViewController(withIdentifier: "SentMemesDetailVC") as! SentMemesDetailVC
+        sentMemesDetailController.meme = sentMemesCollectionCell
+        navigationController?.pushViewController(sentMemesDetailController, animated: true)
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
