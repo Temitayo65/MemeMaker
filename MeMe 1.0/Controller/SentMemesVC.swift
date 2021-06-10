@@ -23,7 +23,6 @@ class SentMemesVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         navigationItem.title = "Sent Memes"
         sentMemesTableView.delegate = self
         sentMemesTableView.dataSource = self
-        //self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

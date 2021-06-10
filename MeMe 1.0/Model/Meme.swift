@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Meme.swift
 //  MeMe 1.0
 //
 //  Created by owner on 25/05/2021.

@@ -18,7 +18,7 @@
 		EBD340C12659415E00F70E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD340C02659415E00F70E5D /* Assets.xcassets */; };
 		EBD340C42659415E00F70E5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD340C22659415E00F70E5D /* LaunchScreen.storyboard */; };
 		EBD63D44265C065D0023C821 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D43265C065D0023C821 /* TextFieldDelegate.swift */; };
-		EBD63D51265D527E0023C821 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D50265D527E0023C821 /* Model.swift */; };
+		EBD63D51265D527E0023C821 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD63D50265D527E0023C821 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		EBD340C32659415E00F70E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD340C52659415E00F70E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD63D43265C065D0023C821 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
-		EBD63D50265D527E0023C821 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EBD63D50265D527E0023C821 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		EB3E70B826710BC400E6E569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EBD63D50265D527E0023C821 /* Model.swift */,
+				EBD63D50265D527E0023C821 /* Meme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 				EB3E70AB2670E67B00E6E569 /* SentMemesCollectionVC.swift in Sources */,
 				EBD340B82659415700F70E5D /* AppDelegate.swift in Sources */,
 				EB3E70BF2671656900E6E569 /* SentMemesCollectionViewCell.swift in Sources */,
-				EBD63D51265D527E0023C821 /* Model.swift in Sources */,
+				EBD63D51265D527E0023C821 /* Meme.swift in Sources */,
 				EB3E70B526710B4D00E6E569 /* SentMemesVC.swift in Sources */,
 				EBD340BA2659415700F70E5D /* SceneDelegate.swift in Sources */,
 			);

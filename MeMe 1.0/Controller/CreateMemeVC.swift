@@ -21,10 +21,10 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     // setting delegates for the textfields and attributes for them also
     let styledTextFieldDelegate = TextFieldDelegate()
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.white,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: -3.0
+      NSAttributedString.Key.strokeColor: UIColor.black,
+      NSAttributedString.Key.foregroundColor: UIColor.white,
+      NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+      NSAttributedString.Key.strokeWidth: -3.0
     ]
     
     override func viewDidLoad() {
@@ -65,14 +65,12 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
 
     func unsubscribeFromKeyboardNotifications() {
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self) // Removing all observers at once
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isEditing{
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
         // checks for the bottom text field before raising the view for keyboard to display
     }
@@ -121,26 +119,9 @@ class CreateMemeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     @objc func cancel(){
         if let navigationController = navigationController {
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let sentMemesController = storyboard.instantiateViewController(identifier: "SentMemesVC") as! SentMemesVC
             navigationController.popToRootViewController(animated: true)
         }
     }
-    /**
-    @IBAction func shareButton(_ sender: Any){
-        let memedImage = generateMemedImage()
-        let shareActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        shareActivityViewController.completionWithItemsHandler = { activity, completed, items, error in
-          if completed {
-            self.saveMeme(memedImage: memedImage)
-            self.dismiss(animated: true, completion: nil)
-          }
-            
-        }
-           present(shareActivityViewController, animated: true, completion: nil)
-    }
-     //  Share icon and toolbar button were also removed appropriately
- **/
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
